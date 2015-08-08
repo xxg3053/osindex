@@ -1,6 +1,6 @@
 
 app.controller('SideBarCtrl', ['$scope','$cookieStore', function($scope,$cookieStore){
-	$scope.isPackUp = $cookieStore.get('isPackUp')=='undefined'?true:$cookieStore.get('isPackUp');
+	$scope.isPackUp = $cookieStore.get('isPackUp')==undefined?true:$cookieStore.get('isPackUp');
 	$scope.packup = function(){
 		$scope.isPackUp = $scope.isPackUp ? false : true;
 		$cookieStore.put("isPackUp",$scope.isPackUp);
@@ -26,3 +26,4 @@ app.controller('SideBarCtrl', ['$scope','$cookieStore', function($scope,$cookieS
 	}];
 
 }])
+
