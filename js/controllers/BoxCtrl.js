@@ -1,0 +1,33 @@
+app.controller('BoxCtrl', ['$scope', function($scope){
+	$scope.items = [{
+		name:'框架',
+		content:[{
+			title:'xx',
+			src:'http://7xky7l.com1.z0.glb.clouddn.com/Desert.jpg',
+			url:'#'
+		},{
+			title:'xx',
+			src:'http://7xky7l.com1.z0.glb.clouddn.com/Desert.jpg',
+			url:'#'
+		},{
+			title:'xx',
+			src:'http://7xky7l.com1.z0.glb.clouddn.com/Desert.jpg',
+			url:'#'
+		}]
+	},{
+		name:'扩展知识',
+		content:[{
+			title:'xx',
+			src:'http://7xky7l.com1.z0.glb.clouddn.com/Desert.jpg',
+			url:'#'
+		},{
+			title:'xx',
+			src:'http://7xky7l.com1.z0.glb.clouddn.com/Desert.jpg',
+			url:'#'
+		},{
+			title:'xx',
+			src:'http://7xky7l.com1.z0.glb.clouddn.com/Desert.jpg',
+			url:'#'
+		}]
+	}]
+}])
