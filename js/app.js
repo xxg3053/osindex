@@ -27,6 +27,7 @@ app.config(['$routeProvider',function($routeProvider) {
         })
         .when('/publish',{
             templateUrl: 'html/publish.html',
+            controller: 'PublishCtrl',
             css:'css/page/publish.css'
         })
         .when('/fonts',{
