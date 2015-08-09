@@ -20,6 +20,10 @@ app.controller('SideBarCtrl', ['$scope','$cookieStore', function($scope,$cookieS
 		name:'发布数据',
 		icon:'icon icon-cloud'
 	},{
+		url:'#/sys',
+		name:'系统设置',
+		icon:'icon icon-cart'
+	},{
 		url:'#/fonts',
 		name:'查看图标',
 		icon:'icon icon-cart'

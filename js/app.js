@@ -30,6 +30,11 @@ app.config(['$routeProvider',function($routeProvider) {
             controller:'PublishCtrl',
             css:'css/page/publish.css'
         })
+        .when('/sys',{
+            templateUrl: 'html/sys.html',
+            controller:'SysCtrl',
+            css:'css/page/sys.css'
+        })
         .when('/fonts',{
             templateUrl: 'html/fonts.html',
             css:'css/page/fonts.css'
