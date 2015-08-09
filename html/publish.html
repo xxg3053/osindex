@@ -1,24 +1,24 @@
-<div class="qiniu">
-	<h2>上传文件到CDN  <span>七牛云存储</span> </h2>
-	
+<div class="qiniu panel">
+	<h2 class="panel-heading">上传文件到CDN  
+	  <span class="small">七牛云存储</span> </h2>
 	 <form name="mForm" ng-submit="upload()" > 
-	 	<input name="token" type="hidden" value="{{token}}" />
-	 	<span class="msg">
-	 		token检测：
-	 		<i ng-show="isCheck" class="icon icon-cancel red"></i>
-	 		<i ng-hide="isCheck" class="icon icon-checkmark blue"></i>
-	 	</span>
-	 	<label><span>上传文件名:</span></label>
-	 		<input ng-model="fmodel.key" type="text" required />
-
-	 	<label><span>文件4M:</span></label>
-	 		<input name="file" type="file" file="file" required />
-	 	<div class="sub">
-	 		<button ng-show="upCheck" ng-model="button" class="button" type="submit" ng-disabled="mForm.$invalid">上传</button>
-	 		<img ng-hide="upCheck" src="http://7xky7l.com1.z0.glb.clouddn.com/loader_3" alt="">
-	 	</div>
-         <span ng-show="getWurl" class="msg">
-         	上传后的外链：{{wurl}}
-         </span>
-        </form>  
+		<div class="panel-body">
+			 	<input name="token" type="hidden" value="{{token}}" />
+			 	<span class="msg">
+			 		token检测：
+			 		<i ng-show="isCheck" class="icon icon-cancel icon-danger"></i>
+			 		<i ng-hide="isCheck" class="icon icon-checkmark icon-success"></i>
+			 	</span>
+			 	<label><span>上传文件名:</span></label>
+			 		<input class="form-control" ng-model="fmodel.key" type="text" required />
+			 	<label><span>文件4M:</span></label>
+			 		<input name="file" type="file" file="file" required />
+			 	
+		</div>
+		<div class="panel-footer">
+		 		<button ng-show="upCheck" ng-model="button" class="btn btn-primary" type="submit" ng-disabled="mForm.$invalid">上传</button>
+		 		<img ng-hide="upCheck" src="http://7xky7l.com1.z0.glb.clouddn.com/loader_3" alt="">
+		 </div>
+	         <span ng-show="getWurl" class="msg">上传后的外链：{{wurl}}</span>
+	     </form>  
 </div>
