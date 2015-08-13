@@ -55,3 +55,13 @@ app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $url
         })
 		
 }]);
+
+app.run(['$rootScope','$state', function($rootScope,$state){
+    $rootScope.$on('$stateChangeStart', 
+        function(event, toState, toParams, fromState, fromParams){
+            console.log(toState.url);
+            if(toState.url=='/publish'){
+                $state.go('index.fonts');
+            }
+        });
+}]);
