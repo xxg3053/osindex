@@ -1,11 +1,49 @@
+<article ng-class="{true:'wrap',false:'wrap wrap-pack-up'}[isPackUp]">
+    <section ng-class="{true:'side-bar',false:'side-bar  pack-up-bar'}[isPackUp]" >
+        <a ng-click="packup()" ng-class="{true:'pack-up',false:'pack-down'}[isPackUp]">
+            <i ng-class="{true:'icon icon-grid',false:'icon icon-move'}[isPackUp]"></i>
+        </a>
+        <a href="#/" class="logo">
+            <h1>
+                <span ng-class="{false:'small'}[isPackUp]">{{siteEn}}</span>
+                <span ng-show="isPackUp">{{siteZn}}</span>
+            </h1>
+        </a>
+        <nav class="nav">
+            <ul>
+                <li ng-repeat="item in navs">
+                    <a ui-sref="{{item.url}}">
+                        <i class="{{item.icon}}"></i>
+                        <span>{{item.name}}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
 
-<div class="col-box" ng-repeat="item in items">
-  <h3 class="focal-title">{{item.name}}</h3>
-  <div class="col-bd">
-      <ul>
-          <li ng-repeat="ite in item.content">
-            <a href="{{ite.url}}"><img src="{{ite.src}}" alt="{{ite.title}}"></a>
-            </li>
-      </ul>
-  </div>
-</div>
+    <header class="header">
+        
+    </header>
+
+    <section class="content">
+	<!-- 	<div class="col-box" ng-repeat="item in items">
+		  <h3 class="focal-title">{{item.name}}</h3>
+		  <div class="col-bd">
+		      <ul>
+		          <li ng-repeat="ite in item.content">
+		            <a href="{{ite.url}}"><img src="{{ite.src}}" alt="{{ite.title}}"></a>
+		            </li>
+		      </ul>
+		  </div>
+		</div> -->
+		<div ui-view=""/>
+    </section>
+    
+    <!--S footer-->
+    <footer class="footer">
+        <ul>
+            <li><i class="icon icon-envelope"></i> xxg3053@qq.com </li>
+        </ul>
+    </footer>
+    <!--E footer-->
+</article>  

@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module("osindex", ['ngRoute','ngCookies']);
+var app = angular.module("osindex", ['ui.router','ngCookies']);
 /**
  * [description] 路由配置
  * @Author   KENFO
@@ -9,39 +9,49 @@ var app = angular.module("osindex", ['ngRoute','ngCookies']);
  * @Describe
  * @return   {[type]}      [description]
  */
-app.config(['$routeProvider',function($routeProvider) {
+app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
 
-	$routeProvider
-		.when('/',{
+    $urlRouterProvider.when("", "/index");
+
+	$stateProvider
+        .state('login',{
+            url:'/login',
+            templateUrl: 'html/login.html',
+            controller: 'LoginCtrl',
+            css:'css/page/index.css'
+        })
+		.state('index',{
+            url:'/index',
 			templateUrl: 'html/index.html',
-            controller: 'BoxCtrl',
+            controller: 'IndexCtrl',
             css:'css/page/index.css'
 		})
-		.when('/self',{
+		.state('index.self',{
+            url:'/self',
 			templateUrl: 'html/self.html',
 			css:'css/page/self.css'
 		})
-        .when('/addmodule',{
+        .state('index.addmodule',{
+            url:'/addmodule',
             templateUrl: 'html/addmodule.html',
             css:'css/page/addmodule.css'
         })
-        .when('/publish',{
+        .state('index.publish',{
+            url:'/publish',
             templateUrl: 'html/publish.html',
             controller:'PublishCtrl',
             css:'css/page/publish.css'
         })
-        .when('/sys',{
+        .state('index.sys',{
+            url:'/sys',
             templateUrl: 'html/sys.html',
             controller:'SysCtrl',
             css:'css/page/sys.css'
         })
-        .when('/fonts',{
+        .state('index.fonts',{
+            url:'/fonts',
             templateUrl: 'html/fonts.html',
             css:'css/page/fonts.css'
         })
-		.otherwise({
-			redirectTo: '/'
-		})
+		
 }]);
-
-
